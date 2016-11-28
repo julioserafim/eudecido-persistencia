@@ -1,0 +1,22 @@
+.navbar-default{
+	background-color: #1976D2;
+    border-color: #1976D2;
+    color: #1976D2;
+    background: #1976D2;
+}
+
+.navbar{
+	background-color: #1976D2;
+    border-color: #1976D2;
+    color: #1976D2;
+    background: #1976D2;
+}
+
+.navbar-default .navbar-brand {
+    color: #FFFFFF;
+}
+
+.navbar-default .navbar-brand:FOCUS,
+.navbar-default .navbar-brand:HOVER {
+    color: #BBDEFB;
+}

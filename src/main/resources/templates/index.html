@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>EuDecido!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link href="../static/css/bootstrap.min.css"
+	th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+
+<link href="../static/css/bootstrap-theme.min.css"
+	th:href="@{css/bootstrap-theme.min.css}" rel="stylesheet"
+	media="screen" />
+
+<script src="../static/js/jquery-3.1.1.min.js"
+	th:src="@{static/js/jquery-3.1.1.min.js}"></script>
+
+<script src="../static/js/bootstrap.min.js"
+	th:src="@{static/js/bootstrap.min.js}"></script>
+
+
+<link href="../static/css/menunavbar.css"
+	th:href="@{css/menunavbar.css}" rel="stylesheet" media="screen" />
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand titulo" href="#">EuDecido!</a>
+			</div>
+			<form class="navbar-form navbar-right" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" name="username"
+						placeholder="Email" />
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" name="password"
+						placeholder="Senha" />
+				</div>
+				<button type="submit" class="btn btn-success">Entrar</button>
+			</form>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<h1>EuDecido!</h1>
+				<h3>é um sistema que visa ajudar a população em geral, de todas
+					as cidades, a analisar e opinar na aprovação, ou não aprovação dos
+					projetos públicos, tendo o poder de expor suas opiniões, votar
+					contra ou favor da execução desses projetos, analisar um ranking
+					com projetos mais bem votados.</h3>
+			</div>
+
+			<div class="col-md-5">
+				<h1>Cadastre-se</h1>
+				<form th:action="@{/cadastrar}" method="post" th:object="${usuario}">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Nome"
+							th:field="*{nome}" />
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Email"
+							th:field="*{email}" />
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="CPF"
+							th:field="*{cpf}" />
+					</div>
+					<h3>Endereço</h3>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Endereço"
+							th:field="*{endereco.rua}" />
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-5">
+								<input type="text" class="form-control" placeholder="Bairro"
+									th:field="*{endereco.bairro}" />
+							</div>
+							<div class="col-md-4">
+								<input type="text" class="form-control" placeholder="CEP"
+									th:field="*{endereco.cep}" />
+							</div>
+							<div class="col-md-3">
+								<input type="text" class="form-control" placeholder="Nº"
+									th:field="*{endereco.numero}" />
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								<input type="text" class="form-control" placeholder="Cidade"
+									th:field="*{endereco.cidade}" />
+							</div>
+							<div class="col-md-6">
+								<input type="text" class="form-control" placeholder="Estado"
+									th:field="*{endereco.estado}" />
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control"
+							placeholder="Digite sua senha" th:field="*{senha}" />
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control"
+							placeholder="Confirme sua senha" th:value="${confirme_senha}"
+							name="confirme_senha" />
+					</div>
+					<button type="submit" class="btn btn-success">Cadastrar</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
