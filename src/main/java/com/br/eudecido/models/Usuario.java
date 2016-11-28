@@ -24,9 +24,9 @@ public class Usuario {
 	private String email;
 	@NotNull
 	private String titulo;
-	@NotNull
-	@OneToOne
-	private Endereco endereco;
+	//@NotNull
+	//@OneToOne
+	//private Endereco endereco;
 
 	public Integer getId_usuario() {
 		return id_usuario;
@@ -76,12 +76,12 @@ public class Usuario {
 		this.titulo = titulo;
 	}
 
-	public Endereco getEndereco() {
+	/*public Endereco getEndereco() {
 		return endereco;
 	}
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
-	}
+	}*/
 
 }
